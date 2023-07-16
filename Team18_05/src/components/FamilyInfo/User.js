@@ -36,9 +36,9 @@ const ManageUser = () => {
   };
 
   useEffect(() => {
-   
+
     axios
-      .get("http://localhost:4421/get-userdetails")
+      .get("https://tiny-miracle-backend.onrender.com/get-userdetails")
       .then((response) => {
         const data = response.data;
         const foundUser = data.find((user) => user.adharCard === state.adharcard);
@@ -77,7 +77,7 @@ const ManageUser = () => {
     </div>
     ) :
     (<div style={{ marginLeft: "200px" }}>
-   
+
       <div
         style={{
           display: "flex",
@@ -172,7 +172,7 @@ const ManageUser = () => {
               ) : (
                 <div className="text">No Medical History</div>
               )}
-                
+
             </div>
           )}
           <h1>Documents Information:</h1>

@@ -31,11 +31,11 @@ const CommunityProfile = () => {
 	const [openAlert, setAlertOpen] = useState(false);
 	const [message, setAlertMsg] = useState("");
 	const [alertType, setAlertType] = useState("");
-	
+
 	const openAlertToast = () => {
 	  setAlertOpen(true);
 	};
-  
+
 	const handleAlertClose = (event, reason) => {
 	  if (reason === 'clickaway') {
 		return;
@@ -44,10 +44,10 @@ const CommunityProfile = () => {
 	  setAlertMsg('');
 	  setAlertOpen(false);
 	};
-  
+
 	useEffect(() => {
 	  openAlertToast();
-  
+
 	}, [message, alertType]);
 
 	const [communityData, setCommunityData] = useState([]);
@@ -62,7 +62,7 @@ const CommunityProfile = () => {
 	);
 
 	// useEffect(() => {
-		
+
 	// }, []);
 
 
@@ -72,7 +72,7 @@ const CommunityProfile = () => {
 			community: state.community,
 		};
 		// console.log("statee", state);
-		axios.post("http://localhost:4421/get-communityfamily", data)
+		axios.post("https://tiny-miracle-backend.onrender.com/get-communityfamily", data)
 			.then((response) => {
 				const data = response.data;
 				const mpiScores = data.map((community) => ({
@@ -90,13 +90,13 @@ const CommunityProfile = () => {
 				);
 			});
 
-		axios.post("http://localhost:4421/details-Event/comwise", data)
+		axios.post("https://tiny-miracle-backend.onrender.com/details-Event/comwise", data)
 			.then((response) => {
 				// setAlertType('Success');
         		// setAlertMsg("");
 
 				const data = response.data;
-				// console.log("event", data);	
+				// console.log("event", data);
 				setEventData(data);
 			})
 			.catch((error) => {
@@ -109,7 +109,7 @@ const CommunityProfile = () => {
 				);
 			});
 			axios.post(
-				`http://localhost:4421/get-communityfamily`, data
+				`https://tiny-miracle-backend.onrender.com/get-communityfamily`, data
 			)
 				.then((response) => {
 					const data = response.data;
@@ -128,7 +128,7 @@ const CommunityProfile = () => {
 					);
 				});
 				axios
-				.get("http://localhost:4421/details-Community")
+				.get("https://tiny-miracle-backend.onrender.com/details-Community")
 				.then((response) => {
 				  const data = response.data;
 				  console.log(data);
@@ -142,13 +142,13 @@ const CommunityProfile = () => {
 				  const finalData = [{ x, y,familyId}];
 				  console.log(finalData);
 				  setCommunityMPI(finalData);
-				
+
 				})
 				.catch((error) => {
 				  console.error("Failed to retrieve Community data:", error);
 				});
 	}, [state.community]);
-	
+
 	useEffect(() => {
 		setBarChartValue(() => (
 			<MpiVsFamilyBarChart Score= {familyMPI} data={familyMPI} />
@@ -265,7 +265,7 @@ const CommunityProfile = () => {
 					  Event_id: params.row._id,
 					},
 				  });
-	  
+
 				//   setIndividual(params.row);
 				//   handleOpen();
 				}}
@@ -294,20 +294,20 @@ const CommunityProfile = () => {
 							title={`${state.community} Community Profile`}
 							subtitle={`Information of the Families and Events in ${state.community}`}
 						/>
-						<Button 
+						<Button
 						style={{ background: '#fbe400', color: '#000000'}}
 
-						variant="contained" color="negative"              
+						variant="contained" color="negative"
 						onClick={() => {
 							navigate("/dashboard");
 						}}>
 					Back
 					</Button>
 					</Box>
-				
+
 				{/* FAMILIES */}
 				<Box
-				    
+
 					sx={{
 						"& .MuiDataGrid-root": {
 							border: "none",
@@ -407,7 +407,7 @@ const CommunityProfile = () => {
 							gridColumn="span 7"
 							gridRow="span 2"
 							backgroundColor='#f0f0f0'
-							
+
 							height="450px"
 						>
 							<Typography
@@ -439,7 +439,7 @@ const CommunityProfile = () => {
 								p="30px"
 								height="450px"
 								style={{ background:'#f0f0f0' }}
-								
+
 							>
 								<Typography
 									variant="h4"
@@ -534,7 +534,7 @@ const CommunityProfile = () => {
 						>
 							EVENTS
 						</Typography>
-					
+
 					</Box>
 
 					{/* Events Graphs */}
@@ -617,7 +617,7 @@ const CommunityProfile = () => {
 
 
 					<Box style={{height: '400px'}}>
-				
+
 						<DataGrid
 							sx={{ mt: "20px" }}
 							getRowId={(row) => row._id}
@@ -629,7 +629,7 @@ const CommunityProfile = () => {
 						/>
 					</Box>
 				</Box>
-			
+
 		</Box>
 	);
 };

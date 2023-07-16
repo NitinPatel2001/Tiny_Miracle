@@ -13,7 +13,7 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4421/details-Event")
+      .get("https://tiny-miracle-backend.onrender.com/details-Event")
       .then((response) => {
         const Event = response.data;
         setEventData(Event);
@@ -36,7 +36,7 @@ export default function Home() {
             justifyContent: "space-evenly",
             marginTop: "50px",
             maxWidth:"100vw",
-          
+
             flexWrap: "wrap", // Enable wrapping of cards
             // display: "grid",
             // gridTemplateColumns: "repeat(3, 1fr)"
@@ -44,7 +44,7 @@ export default function Home() {
         >
           {EventData.map((Event) => (
             <Card
-            
+
               key={Event._id}
               description={Event.description}
               Event_id={Event._id}

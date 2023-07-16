@@ -24,7 +24,7 @@ const CommunityFamilies = () => {
 		const data = {
 			community: state.communityData,
 		};
-		axios.post("http://localhost:4421/get-communityfamily", data)
+		axios.post("https://tiny-miracle-backend.onrender.com/get-communityfamily", data)
 			.then((response) => {
 				const data = response.data;
 				//console.log(data);
@@ -156,7 +156,7 @@ const CommunityFamilies = () => {
 					subtitle={`Families in  ${state.communityData}`}
 				/>
 				<Box
-				
+
 					ml="auto"
 					display="flex"
 					alignItems="center"

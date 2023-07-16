@@ -14,7 +14,7 @@ const AddCommunity = () => {
   const [openAlert, setAlertOpen] = useState(false);
   const [message, setAlertMsg] = useState("");
   const [alertType, setAlertType] = useState("");
-  
+
   const openAlertToast = () => {
     setAlertOpen(true);
   };
@@ -43,14 +43,14 @@ const AddCommunity = () => {
     axios.defaults.withCredentials = true;
     axios({
       method: "POST",
-      url: "http://localhost:4421/add-Community",
+      url: "https://tiny-miracle-backend.onrender.com/add-Community",
       data,
     })
       .then((res) => {
         console.log(res);
         setAlertType('success');
         setAlertMsg("Community added successfully!");
-   
+
         navigate("/manage-community");
       })
       .catch((err) => {
@@ -78,7 +78,7 @@ const AddCommunity = () => {
                   <Header title="Create Community" subtitle="Create a New Community" />
             </Box>
       <Formik
-      
+
         onSubmit={handleFormSubmit}
         initialValues={initialValues}
         validationSchema={checkoutSchema}

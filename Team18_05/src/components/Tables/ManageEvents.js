@@ -39,7 +39,7 @@ const ManageEvent = () => {
 
   const getActiveEventDetails = () => {
     axios
-      .get("http://localhost:4421/details-Event")
+      .get("https://tiny-miracle-backend.onrender.com/details-Event")
       .then((response) => {
         const data = response.data;
         setEventData(data);
@@ -52,7 +52,7 @@ const ManageEvent = () => {
 
   const getInactiveEventDetails = () => {
     axios
-      .get("http://localhost:4421/details-Event-inactive")
+      .get("https://tiny-miracle-backend.onrender.com/details-Event-inactive")
       .then((response) => {
         const data = response.data;
         setEventData2(data);
@@ -68,7 +68,7 @@ const ManageEvent = () => {
     };
 
     axios
-      .post("http://localhost:4421/delete-Event", data)
+      .post("https://tiny-miracle-backend.onrender.com/delete-Event", data)
       .then((response) => {
         console.log(response);
         setIsEventDeleted(true);
@@ -87,12 +87,12 @@ const ManageEvent = () => {
   useEffect(() => {
     console.log(EventData);
   }, [EventData]);
-  
+
 
   useEffect(() => {
     console.log(EventData2);
   }, [EventData2]);
-  
+
 
   const theme = useTheme();
   const colors = tokens(theme.palette);

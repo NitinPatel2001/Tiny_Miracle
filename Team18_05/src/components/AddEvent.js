@@ -90,18 +90,18 @@ const names = [
 
   useEffect(() => {
     axios
-      .get("http://localhost:4421/details-Community")
+      .get("https://tiny-miracle-backend.onrender.com/details-Community")
       .then((response) => {
         const com = response.data;
         updateCommunities(com);
-       
+
       })
       .catch((error) => {
         console.error("Failed to retrieve staff data:", error);
       });
 
     axios
-      .get("http://localhost:4421/details-staff")
+      .get("https://tiny-miracle-backend.onrender.com/details-staff")
       .then((response) => {
         const staff = response.data;
         updateStaffs(staff);
@@ -174,7 +174,7 @@ const names = [
         return [...prevSelected, community];
       }
     });
-    
+
   };
 
   const handleStaffSelect = (staff) => {
@@ -235,7 +235,7 @@ const names = [
     axios.defaults.withCredentials = true;
     axios({
       method: "POST",
-      url: "http://localhost:4421/add-Event",
+      url: "https://tiny-miracle-backend.onrender.com/add-Event",
       data,
     })
       .then((res) => {
@@ -261,7 +261,7 @@ const names = [
         // alert("bad");
         setAlertType('error');
         setAlertMsg("There was some issue in processing your request. Please try again later.");
-       
+
         console.log(err);
       });
   };
@@ -439,14 +439,14 @@ const names = [
 
               { selectedCommunities.length > 0 && <div style={{ marginBottom: '20px'}}>
                 <h4 style={{ marginBottom: 0 }}>
-                Added Communities: 
+                Added Communities:
                 </h4>
                 { "  " + selectedCommunities.map(c => c.name).join(', ')}
               </div>}
 
               { selectedStaffs.length > 0 && <div style={{ marginBottom: '20px'}}>
                 <h4 style={{ marginBottom: 0 }}>
-                Added Staff: 
+                Added Staff:
                 </h4>
                 { "  " + selectedStaffs.map(c => c.name).join(', ')}
               </div>}

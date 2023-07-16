@@ -12,7 +12,7 @@ export default function Schemes() {
     const [EventData, setEventData] = useState([]);
     useEffect(() => {
     axios
-      .get("http://localhost:4421/details-Event")
+      .get("https://tiny-miracle-backend.onrender.com/details-Event")
       .then((response) => {
         const Event = response.data;
         setEventData(Event);

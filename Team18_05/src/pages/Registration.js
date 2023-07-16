@@ -26,7 +26,7 @@ export default function Registration() {
   const [openAlert, setAlertOpen] = useState(false);
   const [message, setAlertMsg] = useState("");
   const [alertType, setAlertType] = useState("");
-  
+
   const openAlertToast = () => {
     setAlertOpen(true);
   };
@@ -78,7 +78,7 @@ export default function Registration() {
     axios.defaults.withCredentials = true;
     axios({
       method: "POST",
-      url: "http://localhost:4421/details-Event/Registration",
+      url: "https://tiny-miracle-backend.onrender.com/details-Event/Registration",
       data,
     })
       .then((res) => {
@@ -87,7 +87,7 @@ export default function Registration() {
           if (state.Switcher == 1) {
             // setAlertType('success');
             // setAlertMsg("Registration is successful!");
-        
+
             navigate("/event-details", {
               state: {
                 Event_id: state.Event_id,
@@ -97,25 +97,25 @@ export default function Registration() {
             // alert("Registered in Event");
             setAlertType('success');
             setAlertMsg("Registered in Event");
-          
+
             navigate("/");
           }
         } else if (res.data == "No User Found") {
           setAlertType('error');
           setAlertMsg("You Have Not A Part Of Any Community, Please Register YourSelf with the help of Voluteers");
-        
+
           // alert(
           //   "You Have Not A Part Of Any Community, Please Register YourSelf with the help of Voluteers"
           // );
         } else if (res.data == "You Are Not from the allowed community") {
           setAlertType('error');
           setAlertMsg(res.data);
-        
+
           // alert("You Are Not from the allowed community");
         } else {
           setAlertType('error');
           setAlertMsg("There was some issue in processing your request. Please try again later.");
-         
+
           // alert("Error");
         }
       })
@@ -123,7 +123,7 @@ export default function Registration() {
         // alert("bad");
         setAlertType('error');
         setAlertMsg("There was some issue in processing your request. Please try again later.");
-       
+
         console.log(err);
       });
   };
@@ -136,7 +136,7 @@ export default function Registration() {
   useEffect(() => {
     axios({
       method: "POST",
-      url: "http://localhost:4421/details-Event/id",
+      url: "https://tiny-miracle-backend.onrender.com/details-Event/id",
       data,
     })
       .then((res) => {
@@ -148,7 +148,7 @@ export default function Registration() {
       .catch((err) => {
         setAlertType('error');
         setAlertMsg("There was some issue in processing your request. Please try again later.");
-       
+
         console.log(err);
       });
   }, []);

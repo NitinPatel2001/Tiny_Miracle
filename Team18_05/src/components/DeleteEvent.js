@@ -17,7 +17,7 @@ const DeleteEvent = () => {
 
 	const navigate = useNavigate();
 	useEffect(() => {
-		axios.get("http://localhost:4421/details-event")
+		axios.get("https://tiny-miracle-backend.onrender.com/details-event")
 			.then((response) => {
 				const Event = response.data;
 				setEventData(Event);
@@ -48,7 +48,7 @@ const DeleteEvent = () => {
 			_id: t,
 		};
 
-		axios.post("http://localhost:4421/delete-Event", data)
+		axios.post("https://tiny-miracle-backend.onrender.com/delete-Event", data)
 			.then((response) => {
 				console.log(response);
 				navigate("/manage-event");
@@ -163,7 +163,7 @@ const DeleteEvent = () => {
 				</Box>
 			</Box>
 			<Box
-			
+
 				m="40px 0 0 0"
 				height="75vh"
 				sx={{

@@ -26,7 +26,7 @@ const Calendar = () => {
   const [eventData, setEventData] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
-      axios.get("http://localhost:4421/details-Event")
+      axios.get("https://tiny-miracle-backend.onrender.com/details-Event")
 			.then((response) => {
         const data = response.data;
         console.log(data);
@@ -86,7 +86,7 @@ const Calendar = () => {
       <Box display="flex" justifyContent="space-between"
           backgroundColor={'#f0f0f0'}
           marginTop= '20px'
-      
+
       >
         {/* CALENDAR SIDEBAR */}
         <Box

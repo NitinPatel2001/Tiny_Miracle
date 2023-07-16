@@ -24,7 +24,7 @@ export default function Attendance() {
 	useEffect(() => {
 		axios({
 			method: "POST",
-			url: "http://localhost:4421/details-Event/user",
+			url: "https://tiny-miracle-backend.onrender.com/details-Event/user",
 			data,
 		})
 			.then((res) => {
@@ -118,7 +118,7 @@ export default function Attendance() {
 				style={{
 					display: "flex",
 					justifyContent: "space-between",
-           
+
 				}}
 			>
 				<Header
@@ -157,7 +157,7 @@ export default function Attendance() {
 				<Box
 					m="40px 0 0 0"
 					height="75vh"
-          
+
 					sx={{
 						"& .MuiDataGrid-root": {
 							border: "none",
@@ -207,7 +207,7 @@ export default function Attendance() {
 						components={{
 							Toolbar: CustomToolbar,
 						}}
-						
+
 					/>
 				</Box>
 			</div>

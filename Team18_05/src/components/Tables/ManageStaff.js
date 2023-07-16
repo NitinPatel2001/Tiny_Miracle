@@ -36,7 +36,7 @@ const Team = () => {
 
 	const navigate = useNavigate();
 	useEffect(() => {
-		axios.get("http://localhost:4421/details-staff")
+		axios.get("https://tiny-miracle-backend.onrender.com/details-staff")
 			.then((response) => {
 				const staff = response.data;
 				setStaffData(staff);
@@ -218,7 +218,7 @@ const Team = () => {
 					/>
 					</Box>
 				<Box
-				
+
 					ml="auto"
 					display="flex"
 					alignItems="center"

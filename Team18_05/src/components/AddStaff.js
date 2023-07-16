@@ -25,7 +25,7 @@ const AddStaff = () => {
   const [openAlert, setAlertOpen] = React.useState(false);
   const [message, setAlertMsg] = useState("");
   const [alertType, setAlertType] = useState("");
-  
+
   const openAlertToast = () => {
     setAlertOpen(true);
   };
@@ -63,7 +63,7 @@ const AddStaff = () => {
     axios.defaults.withCredentials = true;
     axios({
       method: "POST",
-      url: "http://localhost:4421/add-Staff",
+      url: "https://tiny-miracle-backend.onrender.com/add-Staff",
       data,
     })
       .then((res) => {
@@ -79,7 +79,7 @@ const AddStaff = () => {
 
         setAlertType('error');
         setAlertMsg("There was some issue in processing your request. Please try again later.");
-       
+
         console.log(err);
       });
   };

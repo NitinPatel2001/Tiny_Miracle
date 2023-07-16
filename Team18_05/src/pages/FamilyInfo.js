@@ -22,11 +22,11 @@ export default function FamilyInfo() {
 
   const { state } = useLocation();
   const obj = state;
-  
+
   const [openAlert, setAlertOpen] = useState(false);
   const [message, setAlertMsg] = useState("");
   const [alertType, setAlertType] = useState("");
-  
+
   const openAlertToast = () => {
     setAlertOpen(true);
   };
@@ -69,7 +69,7 @@ export default function FamilyInfo() {
 		};
     console.log(obj);
     axios
-      .post("http://localhost:4421/add-familydetails", data)
+      .post("https://tiny-miracle-backend.onrender.com/add-familydetails", data)
       .then((response) => {
         const data = response.data;
         setAlertType('success');
@@ -78,7 +78,7 @@ export default function FamilyInfo() {
       .catch((error) => {
         setAlertType('error');
         setAlertMsg("There was some issue in processing your request. Please try again later.");
-       
+
         console.error("Failed to retrieve Community data:", error);
       });
     console.log(services);
@@ -101,7 +101,7 @@ export default function FamilyInfo() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4421/get-userdetails")
+      .get("https://tiny-miracle-backend.onrender.com/get-userdetails")
       .then((response) => {
         const data = response.data;
         const foundUsers = data.filter(
@@ -117,7 +117,7 @@ export default function FamilyInfo() {
       });
 
       axios
-      .post("http://localhost:4421/get-communityfamily", {
+      .post("https://tiny-miracle-backend.onrender.com/get-communityfamily", {
         community: obj.communityData,
       })
       .then((response) => {
@@ -166,7 +166,7 @@ export default function FamilyInfo() {
                     {message}
               </Alert>
           </Snackbar>)}
-        
+
           <Box display="flex" alignItems="center" mb="20px"
           style={{ }}
 
@@ -177,7 +177,7 @@ export default function FamilyInfo() {
             <Box ml="auto" display="flex" alignItems="center">
               <Box mr={1}>
               <Button
-              
+
                 style={{ background: '#fbe400', color: '#000000', marginRight: '10px' }}
                   onClick={handleButtonClick}
                   color="primary"
@@ -206,7 +206,7 @@ export default function FamilyInfo() {
           <div
             style={{
               display: "flex",
-             
+
             }}
           >
             {/* <Card

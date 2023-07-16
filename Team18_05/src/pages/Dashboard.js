@@ -37,7 +37,7 @@ const Dashboard = () => {
   // let mpiScores = [];
   useEffect(() => {
     axios
-      .get("http://localhost:4421/details-Community")
+      .get("https://tiny-miracle-backend.onrender.com/details-Community")
       .then((response) => {
         const data = response.data;
         console.log(data);
@@ -48,13 +48,13 @@ const Dashboard = () => {
         }));
         //console.log(mpiScores);
         setMPI(mpiScores);
-      
+
       })
       .catch((error) => {
         console.error("Failed to retrieve Community data:", error);
       });
 
-      axios.get("http://localhost:4421/details-Event")
+      axios.get("https://tiny-miracle-backend.onrender.com/details-Event")
 			.then((response) => {
 				const data = response.data;
        // console.log(data);
@@ -67,7 +67,7 @@ const Dashboard = () => {
 					error
 				);
 			});
-      axios.get("http://localhost:4421/search-Community")
+      axios.get("https://tiny-miracle-backend.onrender.com/search-Community")
 			.then((response) => {
 				const data = response.data;
         //console.log(data);
@@ -191,7 +191,7 @@ const Dashboard = () => {
       {/* GRID & CHARTS */}
 
       <Box
-      
+
         display="grid"
         gridTemplateColumns="repeat(auto-fill, minmax(280px, 1fr))"
         gridAutoRows="140px"
@@ -200,7 +200,7 @@ const Dashboard = () => {
       >
         {/* ROW 1 */}
         {communityData.map((params, index) => (
-        
+
            <DashboardCard key={index} communityName={params.name}
            description={params.description} mpi={params.MPIscore.length === 0 ? 1 : params.MPIscore[params.MPIscore.length - 1].score}/>
         //   <Button
@@ -220,7 +220,7 @@ const Dashboard = () => {
         //         height: "100%"
         //       }
         //     }}
-        //     onClick={() => 
+        //     onClick={() =>
 				// navigate("/community-profile", {
 				// // console.log(params.name)
 				// state: {
@@ -260,7 +260,7 @@ const Dashboard = () => {
       gap="20px"
       marginTop="20px"
     >
-      
+
        <Box
         sx={{
           backgroundColor: '#f0f0f0',
@@ -276,11 +276,11 @@ const Dashboard = () => {
           sx={{
             padding: "30px 30px 0 30px",
           }}
-          
+
         >
           Global MPI Score of all communities
         </Typography>
-        
+
         <Box
           sx={{
             backgroundColor: '#f0f0f0',
@@ -290,7 +290,7 @@ const Dashboard = () => {
       >
          {barchart}
        </Box>
-        
+
        </Box>
        <Box
         sx={{
@@ -304,7 +304,7 @@ const Dashboard = () => {
 							fontWeight="600"
               mt= '20px'
               ml='20px'
-              // 
+              //
 							color='primary'
 						>
 							EVENTS
@@ -372,14 +372,14 @@ const Dashboard = () => {
          <Yo />
 
        </Box> */}
-     
 
-     
+
+
        {/* <Box >
          <Yo />
 
        </Box> */}
-     
+
 
     </Box>
          )}

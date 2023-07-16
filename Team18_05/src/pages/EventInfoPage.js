@@ -17,7 +17,7 @@ export default function InfoPage() {
   useEffect(() => {
       axios({
         method: "POST",
-        url: "http://localhost:4421/details-Event/:id",
+        url: "https://tiny-miracle-backend.onrender.com/details-Event/:id",
         data,
       })
         .then((res) => {
@@ -69,10 +69,10 @@ export default function InfoPage() {
         });
       }
       } style={{margin: "10px", backgroundColor: "green"}} className="register-button">Register Now</button>
-      <button 
-      
+      <button
+
       onClick={()=>{
-        
+
         navigate("/");
       }
       } className="register-button">Back</button>

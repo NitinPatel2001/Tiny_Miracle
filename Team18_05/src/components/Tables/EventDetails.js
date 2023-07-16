@@ -57,7 +57,7 @@ const EventDetails = () => {
 	useEffect(() => {
 		axios({
 			method: "POST",
-			url: "http://localhost:4421/details-Event/user",
+			url: "https://tiny-miracle-backend.onrender.com/details-Event/user",
 			data,
 		})
 			.then((res) => {
@@ -77,7 +77,7 @@ const EventDetails = () => {
 	useEffect(() => {
 		axios({
 			method: "POST",
-			url: "http://localhost:4421/details-Event/staff",
+			url: "https://tiny-miracle-backend.onrender.com/details-Event/staff",
 			data,
 		})
 			.then((res) => {
@@ -97,7 +97,7 @@ const EventDetails = () => {
 
 		axios({
 			method: "POST",
-			url: "http://localhost:4421/details-Event/id",
+			url: "https://tiny-miracle-backend.onrender.com/details-Event/id",
 			data,
 		})
 			.then((res) => {
@@ -219,7 +219,7 @@ const EventDetails = () => {
 	const date_end = moment(EventData.endDate).format("DD MMM, YYYY");
 	// const Total_Active_Events = EventData2.length
 
-	
+
 	function CustomToolbar() {
 		return (
 			<GridToolbarContainer>
@@ -597,7 +597,7 @@ const EventDetails = () => {
 				/>
 			</Box>
 			<Box
-			
+
 				m="40px 0 0 0"
 				height="75vh"
 				sx={{
@@ -754,7 +754,7 @@ const EventDetails = () => {
 					/>
 					</Box>
 				<Box
-					
+
 					m="40px 0 40px 0"
 					height="75vh"
 					sx={{

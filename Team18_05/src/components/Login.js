@@ -19,7 +19,7 @@ function Login() {
   const [openAlert, setAlertOpen] = useState(false);
   const [message, setAlertMsg] = useState("");
   const [alertType, setAlertType] = useState("");
-  
+
   const openAlertToast = () => {
     setAlertOpen(true);
   };
@@ -63,7 +63,7 @@ function Login() {
     //console.log(user);
     Axios({
       method: "POST",
-      url: "http://localhost:4421/admin-login",
+      url: "https://tiny-miracle-backend.onrender.com/admin-login",
       data: {
         username: user.email,
         password: user.password,
@@ -73,13 +73,13 @@ function Login() {
         setAlertType('success');
         setAlertMsg("User logged in successfully!");
         navigate("/dashboard");
-  
+
       })
       .catch((err) => {
         // alert("bad");
         setAlertType('error');
         setAlertMsg("There was some issue in processing your request. Please try again later.");
-       
+
         console.log(err);
       });
   }

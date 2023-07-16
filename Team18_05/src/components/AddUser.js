@@ -115,7 +115,7 @@ export default function BasicTextFields() {
     try {
       // Make a POST request to your backend endpoint to add the user
       const response = await axios.post(
-        "http://localhost:4421/add-userdetails",
+        "https://tiny-miracle-backend.onrender.com/add-userdetails",
         user
       );
 

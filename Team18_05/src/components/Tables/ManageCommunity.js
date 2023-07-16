@@ -21,7 +21,7 @@ const ManageCommunity = () => {
   const [openAlert, setAlertOpen] = useState(false);
   const [message, setAlertMsg] = useState("");
   const [alertType, setAlertType] = useState("");
-  
+
   const openAlertToast = () => {
     setAlertOpen(true);
   };
@@ -44,7 +44,7 @@ const ManageCommunity = () => {
 
   const getCOmmunityDetails = () => {
     axios
-    .get("http://localhost:4421/details-Community")
+    .get("https://tiny-miracle-backend.onrender.com/details-Community")
     .then((response) => {
       const data = response.data;
       setCommunityData(data);
@@ -63,7 +63,7 @@ const ManageCommunity = () => {
     axios.defaults.withCredentials = true;
     axios({
       method: "POST",
-      url: "http://localhost:4421/delete-Community",
+      url: "https://tiny-miracle-backend.onrender.com/delete-Community",
       data,
     })
       .then((res) => {
@@ -82,7 +82,7 @@ const ManageCommunity = () => {
       .catch((err) => {
         setAlertType('error');
         setAlertMsg("There was some issue in processing your request. Please try again later.");
-       
+
         console.log(err);
       });
   };
@@ -176,7 +176,7 @@ const ManageCommunity = () => {
 			</GridToolbarContainer>
 		);
 	}
-	
+
 	return (
 		<Box m="20px">
        {message && (<Snackbar open={openAlert} autoHideDuration={3000} onClose={handleAlertClose}>
@@ -185,7 +185,7 @@ const ManageCommunity = () => {
                     {message}
               </Alert>
           </Snackbar>)}
-          
+
 			<Box display="flex" alignItems="center" mb="20px"
 			style={{ }}
 			>
@@ -218,7 +218,7 @@ const ManageCommunity = () => {
 			<Box
 				m="40px 0 0 0"
 				height="75vh"
-				
+
 				sx={{
 					"& .MuiDataGrid-root": {
 						border: "none",

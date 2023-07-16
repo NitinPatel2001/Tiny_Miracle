@@ -26,7 +26,7 @@ export default function BasicTextFields() {
 
     const navigate = useNavigate();
 
- 
+
   const handleFamilyMembersChange = (e, index) => {
     const { value } = e.target;
     const updatedFamilyMembers = [...familyMembers];
@@ -38,7 +38,7 @@ export default function BasicTextFields() {
     const { value } = e.target;
     const updatedHelpNeeded = [...helpNeeded];
     updatedHelpNeeded[index] = value;
-    
+
     setHelpNeeded(updatedHelpNeeded);
   };
   const handleDocumentChange = (e, index) => {
@@ -88,7 +88,7 @@ export default function BasicTextFields() {
           familyId: state.familyId,
         },
       });
-    
+
   }
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -117,7 +117,7 @@ export default function BasicTextFields() {
     try {
       // Make a POST request to your backend endpoint to add the user
       const response = await axios.post(
-        "http://localhost:4421/add-userdetails",
+        "https://tiny-miracle-backend.onrender.com/add-userdetails",
         user
       );
 
@@ -131,7 +131,7 @@ export default function BasicTextFields() {
     } catch (error) {
       console.error(error); // Handle error if request fails
     }
-    
+
 
     // Reset form fields
     setName("");
@@ -172,7 +172,7 @@ export default function BasicTextFields() {
     { value: "2", label: "Employeed" },
   ];
   return (
-    
+
     <Box
       style={{
         display: "flex",
@@ -193,11 +193,11 @@ export default function BasicTextFields() {
           <div>
           <Button sx={{mr:"10px"}}
                 style={{ background: '#fbe400', color: '#000000'}}
-          
+
           variant="contained" onClick={handleSubmit}>Add Member</Button>
-          <Button 
+          <Button
               style={{ background: '#fff', color: '#000000'}}
-          
+
           variant="contained" onClick={handleBack}>Back</Button>
           </div>
         </div>
@@ -214,13 +214,13 @@ export default function BasicTextFields() {
             sx={{ width: "200px" }}
             id="outlined-required"
             label="Member Name"
-       
+
             value={name}
               onChange={(e) => setName(e.target.value)}
           />
 
           <TextField
-            
+
             sx={{ width: "200px" }}
             id="outlined-required"
             label="Phone Number"
@@ -244,7 +244,7 @@ export default function BasicTextFields() {
             value={community}
             onChange={(e) => setCommunity(e.target.value)}
           disabled
-        
+
           />
           <TextField
             required
@@ -307,7 +307,7 @@ export default function BasicTextFields() {
             onChange={(e) => {
               setAdharCard(e.target.value);
             }}
-          
+
           /> )}
           </div>
         </div>
@@ -405,7 +405,7 @@ export default function BasicTextFields() {
             marginBottom: "20px",
           }}
         >
-        
+
           <TextField
             required
             sx={{ width: "200px" }}
@@ -495,7 +495,7 @@ export default function BasicTextFields() {
                   InputLabelProps={{
                     shrink: true,
                   }}
-                  
+
                   name="dateOfIssue"
                   value={document.dateOfIssue}
                   onChange={(e) => handleDocumentChange(e, index)}
@@ -547,7 +547,7 @@ export default function BasicTextFields() {
                   required
                   sx={{ width: "200px" }}
                   id="outlined-required"
-               
+
                   value={history.lastMedicalCheckup}
                   type="date"
                   name="lastMedicalCheckup"
@@ -566,7 +566,7 @@ export default function BasicTextFields() {
               </div>
             ))}
             <Button variant="contained"
-            
+
               type="button"
               onClick={addMedicalHistoryField}
             >

@@ -17,7 +17,7 @@ const DeleteStaff = () => {
 
 	const navigate = useNavigate();
 	useEffect(() => {
-		axios.get("http://localhost:4421/details-staff")
+		axios.get("https://tiny-miracle-backend.onrender.com/details-staff")
 			.then((response) => {
 				const staff = response.data;
 				setStaffData(staff);
@@ -38,7 +38,7 @@ const DeleteStaff = () => {
 		data = {
 			AdharCard_No: data.AdharCard_No,
 		};
-		axios.post("http://localhost:4421/delete-staff", data)
+		axios.post("https://tiny-miracle-backend.onrender.com/delete-staff", data)
 			.then((response) => {
 				console.log(response);
 				navigate("/team");
@@ -158,7 +158,7 @@ const DeleteStaff = () => {
 				</Box>
 			</Box>
 			<Box
-			
+
 				m="40px 0 0 0"
 				height="75vh"
 				sx={{

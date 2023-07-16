@@ -30,7 +30,7 @@ const AddFamily = () => {
     };
 
     axios
-      .post("http://localhost:4421/add-familydetails", data)
+      .post("https://tiny-miracle-backend.onrender.com/add-familydetails", data)
       .then((response) => {
         navigate("/community-families", {
           state: {

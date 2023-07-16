@@ -42,7 +42,7 @@ const ManageUser = () => {
 
 	const navigate = useNavigate();
 	useEffect(() => {
-		axios.get("http://localhost:4421/get-userdetails")
+		axios.get("https://tiny-miracle-backend.onrender.com/get-userdetails")
 			.then((response) => {
 				const data = response.data;
 				setUserData(data);
@@ -303,7 +303,7 @@ const ManageUser = () => {
 			<Box
 				m="40px 0 0 0"
 				height="75vh"
-				
+
 				sx={{
 					"& .MuiDataGrid-root": {
 						border: "none",
